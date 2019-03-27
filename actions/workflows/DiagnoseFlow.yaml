@@ -1,7 +1,7 @@
 ---
 version: '2.0'
 
-default.DiagnoseFlow:
+servicenow.DiagnoseFlow:
   type: direct
   input:
     - diagnosedata
