@@ -4,7 +4,7 @@ enabled: true
 runner_type: mistral-v2
 entry_point: workflows/DiagnoseFlow.yaml
 name: DiagnoseFlow
-pack: default
+pack: servicenow
 parameters:
   diagnosedata:
     required: true
