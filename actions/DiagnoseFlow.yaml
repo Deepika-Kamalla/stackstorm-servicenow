@@ -1,0 +1,12 @@
+---
+description: Workflow for DiagnoseFlow usecase
+enabled: true
+runner_type: mistral-v2
+entry_point: workflows/DiagnoseFlow.yaml
+name: DiagnoseFlow
+pack: default
+parameters:
+  diagnosedata:
+    required: true
+    type: string
+
