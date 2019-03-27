@@ -1,0 +1,23 @@
+---
+name: DiagnoseModule
+pack: kafka
+description: "Rule to trigger DiagnoseModule usecase"
+enabled: true
+
+trigger:
+  type: "kafka.new_message"
+  parameters: {}
+
+criteria:
+  trigger.topic:
+    type: "equals"
+    pattern: "ASKDAnsible_Topic_ST2"
+  trigger.message:
+    type: "exists"
+    pattern: "summary"
+
+action:
+  ref: default.DiagnoseFlow
+  parameters:
+    #cmd: "echo {{ trigger.message.attributes[0].attributeName }}: {{ trigger.message.attributes[0].attributeValue }}"
+    diagnosedata: "{{trigger.message}}"
