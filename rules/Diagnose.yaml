@@ -1,6 +1,6 @@
 ---
 name: DiagnoseModule
-pack: kafka
+pack: servicenow
 description: "Rule to trigger DiagnoseModule usecase"
 enabled: true
 
@@ -17,7 +17,7 @@ criteria:
     pattern: "summary"
 
 action:
-  ref: default.DiagnoseFlow
+  ref: servicenow.DiagnoseFlow
   parameters:
     #cmd: "echo {{ trigger.message.attributes[0].attributeName }}: {{ trigger.message.attributes[0].attributeValue }}"
     diagnosedata: "{{trigger.message}}"
